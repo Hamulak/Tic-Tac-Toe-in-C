@@ -54,6 +54,7 @@ int main(){
             } else {
                 printf("Jogador O\n");
             }
+            
             printf("Digite a linha: ");
             char input[10];
             scanf("%s", input);
@@ -63,6 +64,7 @@ int main(){
                 printf("Entrada invalida!\n Por favor, digite um numero de linha valido.\n");
                 continue;
             }
+
             printf("Digite a coluna: ");
             scanf("%s", input);
 
@@ -101,9 +103,11 @@ int main(){
             printf("\nEmpate\n");
 
         }
+
         printf("\nPlacar ate o momento: Jogador X: %d, Jogador O: %d \n", player_x, player_o);
         printf("Deseja jogar novamente?[S-N]\n");
         scanf(" %c", &response);
+       
         if ((response != 's' && response != 'S') && (response != 'n' && response != 'N')){
             do {printf("\nOpcao invalida!!\n Tente novamente!\n");
             scanf(" %c", &response);
@@ -117,6 +121,7 @@ int main(){
         }
         } 
     } while((response == 's' || response == 'S') && (response != 'n' || response != 'N'));
+
     printf("\n\nPlacar Final: Jogador X: %d, Jogador O: %d \nAte a proxima!!\n", player_x, player_o);
 
     system("pause");
