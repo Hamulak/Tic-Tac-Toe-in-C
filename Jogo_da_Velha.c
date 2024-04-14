@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 void board(char coordinates[3][3]){
     system("cls");
@@ -54,12 +55,26 @@ int main(){
                 printf("Jogador O\n");
             }
             printf("Digite a linha: ");
-            scanf("%i", &l);
+            char input[10];
+            scanf("%s", input);
+            if (isdigit(input[0])) {
+                l = input[0] - '0'; 
+            } else {
+                printf("Entrada invalida!\n Por favor, digite um numero de linha valido.\n");
+                continue;
+            }
             printf("Digite a coluna: ");
-            scanf("%i", &c);
+            scanf("%s", input);
+
+            if (isdigit(input[0])) {
+                c = input[0] - '0'; 
+            } else {
+                printf("Entrada invalida!\n Por favor, digite um numero de linha valido.\n");
+                continue;
+            }
             
             if(l < 1 || c < 1 || l > 3 || c > 3 || coordinates[l-1][c-1] != ' '){
-                printf("Jogada inválida! Tente novamente.\n");
+                printf("Jogada invalida! Tente novamente.\n");
                 continue;
             }
             if(move % 2 == 0){
